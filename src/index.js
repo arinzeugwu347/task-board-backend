@@ -13,7 +13,7 @@ app.use(express.json()); // Understands JSON in body
 
 // Allow frontend to access backend
 app.use(cors({
-  origin: 'http://localhost:5173', // or '*' for dev
+  origin: `${process.env.FRONTEND_URL}` || 'http://localhost:5173', // or '*' for dev
   credentials: true, // if you ever use cookies
 }));
 
